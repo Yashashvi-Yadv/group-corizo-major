@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-700 flex items-center justify-center min-h-screen">
+  <div class="bg-white shadow-md rounded-lg p-8 w-96">
+    <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Signup</h2>
+    <form action="/signup" method="POST" class="space-y-4">
+      <div>
+        <div>
+          <label for="user" class="block text-gray-700">
+            User
+          </label>
+          <input
+            type="radio"
+            name="type"
+            id="user"
+            value="user"
+            class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+          
+          <label for="admin" class="block text-gray-700">
+            Admin
+          </label>
+          <input
+            type="radio"
+            name="type"
+            id="admin"
+            value="admin"
+            class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+        </div>
+        <div>
+          <label for="email" class="block text-gray-700">Name</label>
+          <input type="text" name="name" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+      <div>
+        <label for="email" class="block text-gray-700">Email</label>
+        <input type="email" name="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div>
+        <label for="password" class="block text-gray-700">Password</label>
+        <input type="password" name="password" id="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Signup</button>
+    </form>
+    <p class="text-sm text-gray-600 text-center mt-4">
+      Already have an account? <a href="login" class="text-blue-600 hover:underline">Log in here</a>.
+    </p>
+  </div>
+</body>
+<script>
+  function handleCheckboxChange(selected) {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"][name="type"]');
+  checkboxes.forEach((checkbox) => {
+    if (checkbox !== selected) {
+      checkbox.checked = false; // Uncheck all other checkboxes except the selected one.
+    }
+  });
+}
+
+</script>
+</html>
